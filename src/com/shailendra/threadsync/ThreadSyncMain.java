@@ -3,7 +3,7 @@ package com.shailendra.threadsync;
 import java.util.Scanner;
 
 class Runner implements Runnable {
-    public boolean running = true;
+    public volatile boolean running = true;
 
     public void run() {
         while (running) {
