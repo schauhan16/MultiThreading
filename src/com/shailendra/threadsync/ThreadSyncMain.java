@@ -3,6 +3,12 @@ package com.shailendra.threadsync;
 import java.util.Scanner;
 
 class Runner implements Runnable {
+
+    /**
+     * Since running is a propetry of this class and can be modified in another thread.
+     * Some system makes a cache of such property, resulting in an inconsitent behaviour.
+     * Adding volatile will mark the compiler to not cache and keep the behaviour consistent.
+     */
     public volatile boolean running = true;
 
     public void run() {
